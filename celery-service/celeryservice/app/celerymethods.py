@@ -1,8 +1,14 @@
-from . import views  
-import time 
+from os import scandir
+
+import celery
+from . import celerymethods
 from . import celeryapp
 
-@celeryapp.task
-def Hello():
-    time.sleep(5)
-    print("Hi I am running without que name")
+
+
+def schedular(lst):
+    
+    celeryapp.send_task('run.add_numbers_master', queue = "demo", args=([lst]))
+
+def soln():
+    celeryapp.send_task('run.solve', queue = "demo")
