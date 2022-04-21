@@ -9,7 +9,7 @@ import json
 from celery import Signature,chord,Celery
 import string
 import random
-import forecasting
+# import forecasting
 
 
 
@@ -72,4 +72,8 @@ def add_numbers_master(lst):
 
 @celeryapp.task
 def solve():
-    forecasting.rundart()
+    import time
+    for i in range(10):
+        print("solver started", i)
+        time.sleep(2)
+    # forecasting.rundart()
