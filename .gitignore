@@ -2,3 +2,16 @@ venv
 __pycache*
 *.db
 README.rst
+forecasting.py
+datatrain.csv
+insurance.csv
+sckitemodels.py
+forecasting.py
+forecasting_params.py
+
+*.pyc
+app.db
+./tmp
+./build/*
+.idea
+env
